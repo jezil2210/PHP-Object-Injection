@@ -109,11 +109,20 @@ echo "\n";
 
 ![Alt text](/images/3.png)
    
-   Now let's make the POST request with the serialized object that was created. To do this i created a web server on machine with the original users.php file, to be the target.
-
-![Alt text](/images/4.png)
+   Now let's make the POST request with the serialized object that was created. To do this i created a local web server on machine with the original users.php file, to be the target. Before as you can se if i change the content from the field "b:0;" i can turn the user "jeje" in admin, because the value 0 is for the variable "isAdmin" and how it's boolean if i set to "1" i can become the admin.<br>
    
-As you can se if i change the content from the field "b:0;" i can turn the user "jeje" in admin, because the value 0 is for the variable "isAdmin" and how it's boolean if i set to "1" i can become the admin.<br>
+![Alt text](/images/2.png)
+
+Making the request i can now become the admin and read the file "/etc/passwd".
+
+![Alt text](/images/4.gif)
+   
+obs: the exploit.sh contains the same code from the other image (curl -XPOST...) i just write this in a script to avoid write this everytime that i needed. The content:<br>
+
+```php
+#!/bin/bash
+curl -XPOST -d "jeje=$1" 127.0.0.1:80/users.php
+```
 
 Anyways that was a simple example to you understand how this attack can be exploited, hope u liked :-).   
    
