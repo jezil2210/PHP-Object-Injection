@@ -15,7 +15,7 @@
    — The unserializacion of an object which manipulation is feasible from the user’s side (i.e. a cookie storing data as a serialized object)<br>
    — The use of a magic method (__wakeup, __destroy…) that can be abused in order to achieve interesting actions from a malicious user’s perspective (commands remote execution, file manipulation, etc.).
 
-   Now that we know the concepts let's dive into the practice. Firsts things first, let's see how a serialized object looks like, we have a simple class "Users" that have two attributes(username, and isAdmin) and one simple method(PrintData), that verify if the user is or not an admin, then i just create an object and set the values of the attributes, the user is "JeJe" and isn't and admin.<br>
+   Now that we know the concepts let's dive into the practice. Firsts things first, let's see how a serialized object looks like, we have a simple class "Users" that have two attributes(username, and isAdmin) and one simple method(PrintData), that verify if the user is or not an admin, then i just create an object and set the values of the attributes, the user is "JeJe" and isn't an admin.<br>
    
    ```php
    
